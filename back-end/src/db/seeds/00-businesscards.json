@@ -1,0 +1,29 @@
+[
+    {
+        "first_name": "Mark",
+        "last_name": "Jaymson",
+        "job_title": "manager",
+        "mobile_number": "917-867-3546",
+        "email": "mark12@gmail.com",
+        "company_name": "Apple",
+        "comments": "This is my first business card"
+    },
+    {
+        "first_name": "Nila",
+        "last_name": "Jaym",
+        "job_title": "sales-manager",
+        "mobile_number": "917-867-7687",
+        "email": "nila12@yahoo.com",
+        "company_name": "facebook",
+        "comments": "This is my second business card"
+    },
+    {
+        "first_name": "Lola",
+        "last_name": "Jason",
+        "job_title": "software engineer",
+        "mobile_number": "888-677-1546",
+        "email": "lolola@gmail.com",
+        "company_name": "Service app",
+        "comments": "This is my business card"
+    }
+]
