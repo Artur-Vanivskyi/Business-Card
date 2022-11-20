@@ -46,4 +46,10 @@ headers.append("Content-Type", "application/json");
     }
   }
 
-  
+  export async function listBusinesscards(params, signal){
+    const url = new URL(`${API_BASE_URL}/businesscards`);
+    Object.entries(params).forEach(([key, value]) =>
+    url.searchParams.append(key, value.toString())
+  );
+    return await fetchJson(url, {headers, signal});
+  }
