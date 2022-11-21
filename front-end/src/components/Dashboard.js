@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { listBusinesscards } from "../utils/api";
 import BusinessCards from "./BusinessCards";
 
-
 function Dashboard() {
   const [businesscards, setBusinesscards] = useState([]);
   const [businesscardError, setBusinesscardError] = useState(null);
@@ -19,24 +18,20 @@ function Dashboard() {
     return () => abortController.abort();
   }
 
-
-  
-const displayBusinessCards = businesscards.map((businesscard) => (
-    <BusinessCards key={businesscard.businesscard_id} businesscard={businesscard} />
-))
-
-
+  const displayBusinessCards = businesscards.map((businesscard) => (
+    <BusinessCards
+      key={businesscard.businesscard_id}
+      businesscard={businesscard}
+    />
+  ));
 
   return (
     <>
-    <h1>Dashboard</h1>
-    {businesscards.length === 0 && (
-        <h4>No businesscards found</h4>
-    ) }
-    {displayBusinessCards}
+      <h1>Dashboard</h1>
+      {businesscards.length === 0 && <h4>No businesscards found</h4>}
+      {displayBusinessCards}
     </>
-
-  )
+  );
 }
 
 export default Dashboard;

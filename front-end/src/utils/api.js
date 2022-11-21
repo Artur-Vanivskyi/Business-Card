@@ -1,3 +1,4 @@
+
 const API_BASE_URL =
   process.env.REACT_APP_API_BASE_URL || "http://localhost:5002";
 
@@ -52,4 +53,15 @@ headers.append("Content-Type", "application/json");
     url.searchParams.append(key, value.toString())
   );
     return await fetchJson(url, {headers, signal});
+  }
+
+  export async function createBusinesscard(businesscard, signal){
+    const url = new URL(`${API_BASE_URL}/businesscards`)
+    const options = {
+      method: "POST",
+      headers,
+      body: JSON.stringify({data: businesscard}),
+      signal,
+    }
+    return await fetchJson(url, options)
   }

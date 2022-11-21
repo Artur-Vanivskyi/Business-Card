@@ -1,9 +1,9 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import NotFound from "./NotFound";
-import BusinessCardForm from "../components/BusinessCardForm";
 import Dashboard from "../components/Dashboard";
-import BusinessCards from "../components/BusinessCards";
+import CreateBusinesscard from "../components/CreateBusinesscard";
+
 
 function Routes() {
   return (
@@ -12,13 +12,10 @@ function Routes() {
         <Redirect to={"/dashboard"} />
       </Route>
       <Route path="/businesscard/new">
-        <BusinessCardForm />
+        <CreateBusinesscard/>
       </Route>
       <Route path="/dashboard">
         <Dashboard />
-      </Route>
-      <Route path="/test">
-        <BusinessCards />
       </Route>
       <Route>
         <NotFound />

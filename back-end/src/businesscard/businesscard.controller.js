@@ -53,6 +53,29 @@ async function businesscardExist(req, res, next) {
   });
 }
 
+// ---------- MUST BE A STRING ---------- //
+//try to write validations to see if its includes the number inside using regex
+function fistNameMustBeString(req, res, next) {
+  const { first_name } = req.body.data;
+  if (typeof first_name === "string") {
+    return next();
+  }
+  next({
+    status: 400,
+    message: `First name must contain letters`,
+  });
+}
+
+function lastNameMustBeString(req, res, next) {
+  const { last_name } = req.body.data;
+  if (typeof last_name === "string") {
+    return next();
+  }
+  next({
+    status: 400,
+    message: `Last name must contain letters`,
+  });
+}
 // ---------- FUNCTIONS ---------- //
 
 async function list(req, res, next) {
@@ -65,27 +88,32 @@ async function create(req, res, next) {
   res.status(201).json({ data });
 }
 
-function read(req, res, next){
-    res.json({data: res.locals.businesscard})
+function read(req, res, next) {
+  res.json({ data: res.locals.businesscard });
 }
 
-async function update(req, res, next){
-    const updatedBusinessCard = {
-        ...req.body.data,
-        businesscard_id: res.locals.businesscard.businesscard_id
-    }
-    const data = await service.update(updatedBusinessCard);
-    res.json({data});
+async function update(req, res, next) {
+  const updatedBusinessCard = {
+    ...req.body.data,
+    businesscard_id: res.locals.businesscard.businesscard_id,
+  };
+  const data = await service.update(updatedBusinessCard);
+  res.json({ data });
 }
-
 
 module.exports = {
   list: asyncErrorBoundary(list),
   create: [
     hasOnlyValidProperties,
     hasRequiredProperties,
+    fistNameMustBeString,
+    lastNameMustBeString,
     asyncErrorBoundary(create),
   ],
   read: [asyncErrorBoundary(businesscardExist), read],
-  update: [asyncErrorBoundary(businesscardExist), hasRequiredProperties, asyncErrorBoundary(update)],
+  update: [
+    asyncErrorBoundary(businesscardExist),
+    hasRequiredProperties,
+    asyncErrorBoundary(update),
+  ],
 };

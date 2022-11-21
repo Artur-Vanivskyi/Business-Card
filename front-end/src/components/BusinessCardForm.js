@@ -1,9 +1,14 @@
 import React from "react";
 
-function BusinessCardForm() {
+function BusinessCardForm({
+  handleSubmit,
+  handleChange,
+  handleCancel,
+  formData,
+}) {
   return (
     <div className="container" style={{ width: "60%" }}>
-      <form >
+      <form onSubmit={handleSubmit}>
         <div className="form-group row">
           <label className="col-sm-2" htmlFor="first_name">
             First Name
@@ -11,10 +16,14 @@ function BusinessCardForm() {
           <div className="col-sm-10">
             <input
               name="first_name"
-              type="text"
+              type="name"
               className="form-control"
               id="first_name"
+              autoFocus="on"
               placeholder="Enter first name"
+              pattern="[A-Za-z]*"
+              onChange={handleChange}
+              value={formData.first_name}
               required
             />
           </div>
@@ -30,6 +39,8 @@ function BusinessCardForm() {
               className="form-control"
               id="last_name"
               placeholder="Enter last name"
+              onChange={handleChange}
+              value={formData.last_name}
               required
             />
           </div>
@@ -45,6 +56,8 @@ function BusinessCardForm() {
               className="form-control"
               id="job_title"
               placeholder="Enter job title"
+              onChange={handleChange}
+              value={formData.job_title}
               required
             />
           </div>
@@ -60,7 +73,10 @@ function BusinessCardForm() {
               className="form-control"
               id="mobile_number"
               pattern="[0-9-]+"
+              maxLength="12"
               placeholder="xxx-xxx-xxxx"
+              onChange={handleChange}
+              value={formData.mobile_number}
               required
             />
           </div>
@@ -76,6 +92,8 @@ function BusinessCardForm() {
               className="form-control"
               id="email"
               placeholder="Enter email"
+              onChange={handleChange}
+              value={formData.email}
               required
             />
           </div>
@@ -91,6 +109,8 @@ function BusinessCardForm() {
               className="form-control"
               id="company_name"
               placeholder="Enter company name"
+              onChange={handleChange}
+              value={formData.company_name}
               required
             />
           </div>
@@ -106,6 +126,8 @@ function BusinessCardForm() {
               className="form-control"
               id="comments"
               placeholder="Enter comment"
+              onChange={handleChange}
+              value={formData.comments}
             />
           </div>
         </div>
@@ -113,10 +135,7 @@ function BusinessCardForm() {
           <button type="submit" className="btn btn-info mr-3">
             <span className="oi oi-circle-check"></span> Submit
           </button>
-          <button
-            type="button"
-            className="btn btn-secondary"
-          >
+          <button type="button" className="btn btn-secondary" onClick={handleCancel}>
             <span className="oi oi-circle-x mr-1"></span> Cancel
           </button>
         </div>
