@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import NotFound from "./NotFound";
 import Dashboard from "../components/Dashboard";
 import CreateBusinesscard from "../components/CreateBusinesscard";
+import EditBusinessCard from "../components/EditBusinessCard";
 
 
 function Routes() {
@@ -11,8 +12,11 @@ function Routes() {
       <Route exact={true} path="/">
         <Redirect to={"/dashboard"} />
       </Route>
-      <Route path="/businesscard/new">
+      <Route path="/businesscards/new">
         <CreateBusinesscard/>
+      </Route>
+      <Route path="/businesscards/:businesscard_id/edit">
+        <EditBusinessCard/>
       </Route>
       <Route path="/dashboard">
         <Dashboard />

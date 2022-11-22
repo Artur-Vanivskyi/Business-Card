@@ -49,7 +49,7 @@ async function businesscardExist(req, res, next) {
   }
   next({
     status: 404,
-    message: `Reservation ID ${reservation_id} does not exist`,
+    message: `BusinessCard ID ${businesscard_id} does not exist`,
   });
 }
 
@@ -76,6 +76,31 @@ function lastNameMustBeString(req, res, next) {
     message: `Last name must contain letters`,
   });
 }
+
+// ---------- CONTAINS NUMBERS AND CHARACTERS ---------- //
+
+function inputString(string) {
+  let regex = /^[a-zA-Z]+$/;
+  return regex.test(string);
+}
+
+function containLetters(req, res, next) {
+  const { first_name, last_name } = req.body.data;
+  if (!inputString(first_name)) {
+    return next({
+      status: 400,
+      message: "Field must contains only letters",
+    });
+  }
+  if (!inputString(last_name)) {
+    return next({
+      status: 400,
+      message: "Field must contain only letters",
+    });
+  }
+  next();
+}
+
 // ---------- FUNCTIONS ---------- //
 
 async function list(req, res, next) {
@@ -89,6 +114,7 @@ async function create(req, res, next) {
 }
 
 function read(req, res, next) {
+  console.log("line 119", res.locals.businesscard)
   res.json({ data: res.locals.businesscard });
 }
 
@@ -97,7 +123,9 @@ async function update(req, res, next) {
     ...req.body.data,
     businesscard_id: res.locals.businesscard.businesscard_id,
   };
+  console.log(updatedBusinessCard)
   const data = await service.update(updatedBusinessCard);
+  console.log(data)
   res.json({ data });
 }
 
@@ -108,6 +136,7 @@ module.exports = {
     hasRequiredProperties,
     fistNameMustBeString,
     lastNameMustBeString,
+    containLetters,
     asyncErrorBoundary(create),
   ],
   read: [asyncErrorBoundary(businesscardExist), read],

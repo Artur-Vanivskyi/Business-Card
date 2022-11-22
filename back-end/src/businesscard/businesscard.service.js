@@ -14,16 +14,16 @@ function create(businessCard) {
 function read(businesscard_id){
     return knex("businesscards")
     .select("*")
-    .where({businesscard_id: businesscard_id})
+    .where({businesscard_id})
     .first();
 }
 
 function update(updatedBusinessCard){
+  console.log("service", updatedBusinessCard.businesscard_id)
     return knex("businesscards")
     .select("*")
     .where({businesscard_id: updatedBusinessCard.businesscard_id})
-    .update(updatedBusinessCard)
-    .returning("*")
+    .update(updatedBusinessCard, "*")
     .then((updatedRecord) => updatedRecord[0]);
 }
 

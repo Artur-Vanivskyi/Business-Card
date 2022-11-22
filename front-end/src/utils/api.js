@@ -1,9 +1,9 @@
+import EditBusinessCard from "../components/EditBusinessCard";
 
 const API_BASE_URL =
   process.env.REACT_APP_API_BASE_URL || "http://localhost:5002";
 
-
-  /**
+/**
  * Defines the default headers for these functions to work with `json-server`
  */
 const headers = new Headers();
@@ -24,44 +24,64 @@ headers.append("Content-Type", "application/json");
  *  a promise that resolves to the `json` data or an error.
  *  If the response is not in the 200 - 399 range the promise is rejected.
  */
- async function fetchJson(url, options, onCancel) {
-    try {
-      const response = await fetch(url, options);
-  
-      if (response.status === 204) {
-        return null;
-      }
-  
-      const payload = await response.json();
-  
-      if (payload.error) {
-        return Promise.reject({ message: payload.error });
-      }
-      return payload.data;
-    } catch (error) {
-      if (error.name !== "AbortError") {
-        console.error(error.stack);
-        throw error;
-      }
-      return Promise.resolve(onCancel);
-    }
-  }
+async function fetchJson(url, options, onCancel) {
+  try {
+    const response = await fetch(url, options);
 
-  export async function listBusinesscards(params, signal){
-    const url = new URL(`${API_BASE_URL}/businesscards`);
-    Object.entries(params).forEach(([key, value]) =>
+    if (response.status === 204) {
+      return null;
+    }
+
+    const payload = await response.json();
+
+    if (payload.error) {
+      return Promise.reject({ message: payload.error });
+    }
+    return payload.data;
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      console.error(error.stack);
+      throw error;
+    }
+    return Promise.resolve(onCancel);
+  }
+}
+
+export async function listBusinesscards(params, signal) {
+  const url = new URL(`${API_BASE_URL}/businesscards`);
+  Object.entries(params).forEach(([key, value]) =>
     url.searchParams.append(key, value.toString())
   );
-    return await fetchJson(url, {headers, signal});
-  }
+  return await fetchJson(url, { headers, signal });
+}
 
-  export async function createBusinesscard(businesscard, signal){
-    const url = new URL(`${API_BASE_URL}/businesscards`)
-    const options = {
-      method: "POST",
-      headers,
-      body: JSON.stringify({data: businesscard}),
-      signal,
-    }
-    return await fetchJson(url, options)
-  }
+export async function createBusinesscard(businesscard, signal) {
+  const url = new URL(`${API_BASE_URL}/businesscards`);
+  const options = {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ data: businesscard }),
+    signal,
+  };
+  return await fetchJson(url, options);
+}
+
+export async function readBusinesscard(businesscard_id, signal) {
+  const url = new URL(`${API_BASE_URL}/businesscards/${businesscard_id}`);
+  console.log("line 71", businesscard_id)
+  return await fetchJson(url, { headers, signal });
+}
+
+export async function editBusinesscard(businesscard, businesscard_id, signal) {
+  const url = new URL(`${API_BASE_URL}/businesscards/${businesscard_id}`);
+  console.log("api 76",businesscard)
+  console.log("api 77 id", businesscard_id)
+  const options = {
+    method: "PUT",
+    headers,
+    body: JSON.stringify({ data: businesscard }),
+    signal,
+  };
+
+  return await fetchJson(url, options);
+}

@@ -2,6 +2,7 @@ import React from "react";
 
 function BusinessCards({ businesscard }) {
   const {
+    businesscard_id,
     first_name,
     last_name,
     job_title,
@@ -22,6 +23,13 @@ function BusinessCards({ businesscard }) {
         <h4>Job Title: {job_title}</h4>
         <h4>Company name: {company_name}</h4>
         <h4>Comments: {comments}</h4>
+        <a
+          href={`/businesscards/${businesscard_id}/edit`}
+          role="button"
+          className="btn btn-secondary"
+        >
+          <span className="oi oi-pencil"></span> Edit
+        </a>
       </div>
     </>
   );

@@ -20,8 +20,6 @@ function CreateBusinesscard() {
 
   
   const handleChange = ({ target }) => {
-    // if(target.name === "first_name") target.value.replace(/[^a-z]/gi, '');
-    // const formDataFormated = {...formData, first_name: target.value.replace(/[^a-z]/gi, '')}
     setFormData({
       ...formData,
       [target.name]: target.value,

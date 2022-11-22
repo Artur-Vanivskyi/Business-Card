@@ -12,7 +12,7 @@ function NavBar() {
           <Link to="/search">
             <h4>Search</h4>
           </Link>
-          <Link to="/businesscard/new">
+          <Link to="/businesscards/new">
             <h4>Add Card</h4>
           </Link>
         </div>
