@@ -27,9 +27,15 @@ function update(updatedBusinessCard){
     .then((updatedRecord) => updatedRecord[0]);
 }
 
+function destroy(businesscard_id){
+  return knex("businesscards").where({businesscard_id}).del();
+}
+
+
 module.exports = {
   list,
   create,
   read,
   update,
+  destroy,
 };

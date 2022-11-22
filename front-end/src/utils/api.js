@@ -1,4 +1,3 @@
-import EditBusinessCard from "../components/EditBusinessCard";
 
 const API_BASE_URL =
   process.env.REACT_APP_API_BASE_URL || "http://localhost:5002";
@@ -68,14 +67,11 @@ export async function createBusinesscard(businesscard, signal) {
 
 export async function readBusinesscard(businesscard_id, signal) {
   const url = new URL(`${API_BASE_URL}/businesscards/${businesscard_id}`);
-  console.log("line 71", businesscard_id)
   return await fetchJson(url, { headers, signal });
 }
 
 export async function editBusinesscard(businesscard, businesscard_id, signal) {
   const url = new URL(`${API_BASE_URL}/businesscards/${businesscard_id}`);
-  console.log("api 76",businesscard)
-  console.log("api 77 id", businesscard_id)
   const options = {
     method: "PUT",
     headers,
@@ -83,5 +79,14 @@ export async function editBusinesscard(businesscard, businesscard_id, signal) {
     signal,
   };
 
+  return await fetchJson(url, options);
+}
+
+export async function deleteBusinesscard(businesscard_id){
+  const url = new URL(`${API_BASE_URL}/businesscards/${businesscard_id}`)
+  const options = {
+    method: "DELETE",
+    headers,
+  }
   return await fetchJson(url, options);
 }

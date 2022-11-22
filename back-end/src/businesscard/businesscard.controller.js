@@ -114,7 +114,6 @@ async function create(req, res, next) {
 }
 
 function read(req, res, next) {
-  console.log("line 119", res.locals.businesscard)
   res.json({ data: res.locals.businesscard });
 }
 
@@ -123,10 +122,15 @@ async function update(req, res, next) {
     ...req.body.data,
     businesscard_id: res.locals.businesscard.businesscard_id,
   };
-  console.log(updatedBusinessCard)
   const data = await service.update(updatedBusinessCard);
-  console.log(data)
   res.json({ data });
+}
+
+async function destroy(req, res, next) {
+  const { businesscard_id } = req.params;
+  const data = await service.destroy(businesscard_id);
+  const message = "hello"
+  res.sendStatus(204)
 }
 
 module.exports = {
@@ -145,4 +149,5 @@ module.exports = {
     hasRequiredProperties,
     asyncErrorBoundary(update),
   ],
+  delete: [asyncErrorBoundary(businesscardExist), asyncErrorBoundary(destroy)],
 };
