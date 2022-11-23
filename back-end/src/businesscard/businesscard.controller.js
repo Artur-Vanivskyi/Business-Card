@@ -1,7 +1,6 @@
 const service = require("./businesscard.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 const hasProperties = require("../errors/hasProperties");
-const { P } = require("pino");
 
 // ---------- VALIDATIONS ---------- //
 
@@ -54,7 +53,7 @@ async function businesscardExist(req, res, next) {
 }
 
 // ---------- MUST BE A STRING ---------- //
-//try to write validations to see if its includes the number inside using regex
+
 function fistNameMustBeString(req, res, next) {
   const { first_name } = req.body.data;
   if (typeof first_name === "string") {
@@ -104,8 +103,18 @@ function containLetters(req, res, next) {
 // ---------- FUNCTIONS ---------- //
 
 async function list(req, res, next) {
-  const data = await service.list();
+  const { mobile_number } = req.query;
+  const data = await (mobile_number
+    ? service.search(mobile_number)
+    : service.list());
   res.json({ data });
+}
+
+async function listByFirstName(req, res, next){
+  const { first_name } = req.query
+  console.log(first_name)
+  const data = await service.searchByFirstName(first_name);
+  res.json({data});
 }
 
 async function create(req, res, next) {
@@ -129,12 +138,13 @@ async function update(req, res, next) {
 async function destroy(req, res, next) {
   const { businesscard_id } = req.params;
   const data = await service.destroy(businesscard_id);
-  const message = "hello"
-  res.sendStatus(204)
+  const message = "hello";
+  res.sendStatus(204);
 }
 
 module.exports = {
   list: asyncErrorBoundary(list),
+  listByFirstName: asyncErrorBoundary(listByFirstName),
   create: [
     hasOnlyValidProperties,
     hasRequiredProperties,

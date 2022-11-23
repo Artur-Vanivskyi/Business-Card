@@ -1,7 +1,7 @@
 import React from "react";
 import { deleteBusinesscard } from "../utils/api";
 
-function BusinessCards({ businesscard, loadDashboard }) {
+function BusinessCards({ businesscard, loadBusinesscards }) {
   const {
     businesscard_id,
     first_name,
@@ -13,10 +13,10 @@ function BusinessCards({ businesscard, loadDashboard }) {
     comments,
   } = businesscard;
 
-  const handleDelete = () => {
+  const handleDelete = (event) => {
     if (window.confirm("Do you want to delete this card?")) {
       deleteBusinesscard(businesscard_id)
-        .then(() => loadDashboard())
+        .then(() => loadBusinesscards(event))
         .catch((error) => console.log(error));
     }
   };

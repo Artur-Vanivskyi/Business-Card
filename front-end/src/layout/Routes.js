@@ -4,7 +4,7 @@ import NotFound from "./NotFound";
 import Dashboard from "../components/Dashboard";
 import CreateBusinesscard from "../components/CreateBusinesscard";
 import EditBusinessCard from "../components/EditBusinessCard";
-
+import SearchBusinesscard from '../components/SearchBusinesscard';
 
 function Routes() {
   return (
@@ -20,6 +20,9 @@ function Routes() {
       </Route>
       <Route path="/dashboard">
         <Dashboard />
+      </Route>
+      <Route path="/search">
+        <SearchBusinesscard />
       </Route>
       <Route>
         <NotFound />
