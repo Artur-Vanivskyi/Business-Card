@@ -17,14 +17,5 @@ router
 .post(controller.create)
 .all(methodNotAllowed);
 
-router
-.route("/search")
-.get(controller.listByFirstName)
-.all(methodNotAllowed);
-
-
-
-
-
 
 module.exports = router;

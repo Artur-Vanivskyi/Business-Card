@@ -102,20 +102,48 @@ function containLetters(req, res, next) {
 
 // ---------- FUNCTIONS ---------- //
 
+// async function list(req, res, next) {
+//   const { mobile_number } = req.query;
+//   const data = await (mobile_number
+//     ? service.search(mobile_number)
+//     : service.list());
+//   res.json({ data });
+// }
+
+// async function list(req, res, next) {
+//   const data = await service.list();
+//   res.json({ data });
+// }
+
 async function list(req, res, next) {
-  const { mobile_number } = req.query;
-  const data = await (mobile_number
-    ? service.search(mobile_number)
-    : service.list());
-  res.json({ data });
+  const { first_name, mobile_number } = req.query;
+  console.log(first_name)
+  if (first_name) {
+    const data = await service.searchByFirstName(first_name);
+    res.json({ data });
+  } else if (mobile_number) {
+    const data = await service.search(mobile_number);
+    res.json({ data });
+  } else {
+    const data = await service.list();
+    res.json({ data });
+  }
 }
 
-async function listByFirstName(req, res, next){
-  const { first_name } = req.query
-  console.log(first_name)
-  const data = await service.searchByFirstName(first_name);
-  res.json({data});
-}
+// async function listByFirstName(req, res, next) {
+//   const { first_name } = req.query;
+//   console.log(first_name);
+//   const data = await service.searchByFirstName(first_name);
+//   res.json({ data });
+// }
+
+// async function listSearch(req, res, next) {
+//   const { first_name, mobile_number } = req.query;
+//   const data = await (mobile_number
+//     ? service.search(mobile_number)
+//     : service.searchByFirstName(first_name));
+//   res.json({ data });
+// }
 
 async function create(req, res, next) {
   const data = await service.create(req.body.data);
@@ -144,7 +172,8 @@ async function destroy(req, res, next) {
 
 module.exports = {
   list: asyncErrorBoundary(list),
-  listByFirstName: asyncErrorBoundary(listByFirstName),
+  //listByFirstName: asyncErrorBoundary(listByFirstName),
+  //listSearch: asyncErrorBoundary(listSearch),
   create: [
     hasOnlyValidProperties,
     hasRequiredProperties,

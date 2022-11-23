@@ -4,7 +4,8 @@ import BusinessCards from "./BusinessCards";
 
 function SearchBusinesscard() {
   const initialFormState = {
-    mobile_number: "",
+    first_name: "",
+   
   };
 
   const [formData, setFormData] = useState(initialFormState);
@@ -23,6 +24,8 @@ function SearchBusinesscard() {
     listBusinesscards(formData, abortController.signal)
       .then(setBusinesscards)
       .catch((error) => console.log(error));
+    
+    
 
     return () => abortController.abort();
   };
@@ -42,13 +45,24 @@ function SearchBusinesscard() {
         onSubmit={handleFind}
       >
         <div className="form-group mx-sm-3 mb-2">
+            <label>
+                <select
+                id=""
+                name=""
+                onChange={handleChange}
+                >
+                <option value="first_name">First Name</option>
+                <option value="mobile_number">Mobile Number</option>
+                </select>
+            </label>
+         
           <input
             name="mobile_number"
             type="search"
             className="form-control"
             id="mobile_number"
             onChange={handleChange}
-            value={formData.mobile_number}
+            value={formData.first_name}
           />
         </div>
         <button type="submit" className="btn btn-info mb-2">
