@@ -9,7 +9,7 @@ function Layout(){
       <div className="col side-bar">
         <NavBar />
       </div>
-      <div className="col">
+      <div>
         <Routes />
       </div>
     </div>

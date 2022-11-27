@@ -49,7 +49,7 @@ function EditBusinessCard() {
   }, [businesscard_id]);
 
   const handleSubmit = (event) => {
-    console.log("line 52", formData)
+
     event.preventDefault()
     const abortController = new AbortController();
     editBusinesscard(formData, businesscard_id, abortController.signal)

@@ -22,7 +22,7 @@ function Dashboard() {
     <BusinessCards
       key={businesscard.businesscard_id}
       businesscard={businesscard}
-      loadDashboard={loadDashboard}
+      loadBusinesscards={loadDashboard}
     />
   ));
 

@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    background: #1d2b3a;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.inputBox {
+    position: relative;
+    width: 320px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: #1d2b3a;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.5s;
+
+}
+
+.inputBox textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: #1d2b3a;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+/* .inputBox textarea:hover {
+   
+    border: 1px solid #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    
+} */
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+
+}
+
+.inputBox textarea:valid~span,
+.inputBox textarea:focus~span {
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+    letter-spacing: 0.2em;
+}
+
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+    letter-spacing: 0.2em;
+}
+
+.inputBox:nth-child(n+2) input:valid~span,
+.inputBox:nth-child(n+2) input:focus~span {
+    background: #00dfc4;
+    color: #1d2b3a;
+    border-radius: 2px;
+}
+
+
+.inputBox input:valid,
+.inputBox input:focus {
+    border: 1px solid #00dfc4;
+}
+
+
+.button {
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    margin-right: 0.5em;
+    font-size: 15px;
+    background-color: #1d2b3a;
+    color:  #00dfc4;
+    font-weight: 300;
+    border: 2px solid  #00dfc4;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: 1.5s;
+
+}
+
+
+.button:hover {
+    box-shadow: 0 5px 20px 0 #00dfc4 inset, 0 5px 20px 0  #00dfc4,
+                0 5px 20px 0  #00dfc4 inset, 0 5px 20px 0  #00dfc4;
+}

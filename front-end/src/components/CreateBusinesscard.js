@@ -29,7 +29,7 @@ function CreateBusinesscard() {
   const handleCancel = () => {
     history.goBack();
   };
-  console.log(formData)
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const abortController = new AbortController();
@@ -44,7 +44,7 @@ function CreateBusinesscard() {
   const displayFormErrros = formErrors && <ErrorAlert error={formErrors} />;
 
   return (
-    <div>
+    <>
       <h1>Businesscard</h1>
       
      {displayFormErrros}
@@ -54,7 +54,7 @@ function CreateBusinesscard() {
         handleCancel={handleCancel}
         formData={formData}
       />
-    </div>
+    </>
   );
 }
 
