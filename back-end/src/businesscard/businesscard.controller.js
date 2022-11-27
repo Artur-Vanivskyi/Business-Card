@@ -117,7 +117,7 @@ function containLetters(req, res, next) {
 
 async function list(req, res, next) {
   const { first_name, mobile_number } = req.query;
-  console.log(first_name)
+  console.log("line 120", first_name)
   if (first_name) {
     const data = await service.searchByFirstName(first_name);
     res.json({ data });
