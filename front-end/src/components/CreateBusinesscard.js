@@ -45,7 +45,7 @@ function CreateBusinesscard() {
 
   return (
     <>
-      <h1>Businesscard</h1>
+      
       
      {displayFormErrros}
       <BusinessCardForm

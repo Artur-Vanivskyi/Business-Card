@@ -6,7 +6,7 @@ import './Layout.css'
 function Layout(){
     return (
         <div>
-      <div className="col side-bar">
+      <div className="">
         <NavBar />
       </div>
       <div>
