@@ -5,12 +5,16 @@ import Dashboard from "../components/Dashboard";
 import CreateBusinesscard from "../components/CreateBusinesscard";
 import EditBusinessCard from "../components/EditBusinessCard";
 import SearchBusinesscard from '../components/SearchBusinesscard';
+import Home from "../components/Home";
 
 function Routes() {
   return (
     <Switch>
       <Route exact={true} path="/">
         <Redirect to={"/dashboard"} />
+      </Route>
+      <Route path="/home">
+        <Home/>
       </Route>
       <Route path="/businesscards/new">
         <CreateBusinesscard/>

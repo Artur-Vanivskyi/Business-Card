@@ -13,6 +13,11 @@ function NavBar() {
         </div>
 
         <ul>
+        <li>
+            <Link to="/home" className="navlink">
+              Home
+            </Link>
+          </li>
           <li>
             <Link to="/dashboard" className="navlink">
               Dashboard
