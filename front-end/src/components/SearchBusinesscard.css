@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pageBody {
+    display: flex;
+    justify-content: center;
+    background: #1A3C40;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 450px;
+}
+
+.showCards {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+
+
+.inputLine {
+    position: relative;
+    width: 320px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.inputLine input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: #1d2b3a;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.5s;
+
+}
+
+.inputLine span {
+    position: absolute;
+    left: 0px;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+
+}
+
+.inputLine input:valid~span,
+.inputLine input:focus~span {
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+    letter-spacing: 0.2em;
+}
+
+.inputLine input:valid,
+.inputLine input:focus {
+    border: 1px solid #00dfc4;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttonFind {
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    margin-right: 0.5em;
+    font-size: 15px;
+    background-color: #1d2b3a;
+    color: #00dfc4;
+    font-weight: 300;
+    border: 2px solid #00dfc4;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: 1.5s;
+
+}
+
+
+.buttonFind:hover {
+    box-shadow: 0 5px 20px 0 #00dfc4 inset, 0 5px 20px 0 #00dfc4,
+        0 5px 20px 0 #00dfc4 inset, 0 5px 20px 0 #00dfc4;
+}

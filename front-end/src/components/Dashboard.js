@@ -1,7 +1,8 @@
+import "./Dashboard.css"
 import React, { useState, useEffect } from "react";
 import { listBusinesscards } from "../utils/api";
 import BusinessCards from "./BusinessCards";
-import "./Dashboard.css"
+
 
 function Dashboard() {
   const [businesscards, setBusinesscards] = useState([]);
@@ -14,7 +15,7 @@ function Dashboard() {
     setBusinesscardError(null);
     listBusinesscards(abortController.signal)
       .then(setBusinesscards)
-      .catch(businesscardError);
+      .catch(setBusinesscardError);
 
     return () => abortController.abort();
   }
@@ -28,10 +29,9 @@ function Dashboard() {
   ));
 
   return (
-    <>
-      {businesscards.length === 0 && <h4>No businesscards found</h4>}
+    
       <div className="display">{displayBusinessCards}</div>
-    </>
+    
   );
 }
 

@@ -25,7 +25,7 @@ function BusinessCards({ businesscard, loadBusinesscards }) {
 
   return (
     <div className="all-card">
-      <section>
+      
         <div className="bussiness-card">
           <div className="front">
             <div className="company">{company_name}</div>
@@ -56,7 +56,7 @@ function BusinessCards({ businesscard, loadBusinesscards }) {
             </div>
           </div>
         </div>
-      </section>
+      
     </div>
 
     // {/* <div className="card">

@@ -7,13 +7,13 @@ function NavBar() {
     <>
       <nav className="all">
         <div className="navtop">
-          <Link to="/dashboard" className="navBrand">
+          <Link to="/home" className="navBrand">
             Vancard
           </Link>
         </div>
 
         <ul>
-        <li>
+          <li>
             <Link to="/home" className="navlink">
               Home
             </Link>

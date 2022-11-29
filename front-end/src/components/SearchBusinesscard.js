@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { listBusinesscards } from "../utils/api";
 import BusinessCards from "./BusinessCards";
+import "./SearchBusinesscard.css";
 
 function SearchBusinesscard() {
   const initialFormState = {
-    first_name: "",
-   
+    mobile_number: "",
   };
 
   const [formData, setFormData] = useState(initialFormState);
@@ -24,8 +24,6 @@ function SearchBusinesscard() {
     listBusinesscards(formData, abortController.signal)
       .then(setBusinesscards)
       .catch((error) => console.log(error));
-    
-    
 
     return () => abortController.abort();
   };
@@ -39,45 +37,34 @@ function SearchBusinesscard() {
   ));
 
   return (
-    <>
-      <form
-        className="form-inline d-flex justify-content-center mt-5"
-        onSubmit={handleFind}
-      >
-        <div className="form-group mx-sm-3 mb-2">
-            <label>
-                <select
-                id=""
-                name=""
-                onChange={handleChange}
-                >
-                <option value="first_name">First Name</option>
-                <option value="mobile_number">Mobile Number</option>
-                </select>
-            </label>
-         
+    <div className="pageBody">
+      <form className="" onSubmit={handleFind}>
+        <div className="inputLine">
           <input
             name="mobile_number"
             type="search"
-            className="form-control"
             id="mobile_number"
             onChange={handleChange}
-            value={formData.first_name}
+            value={formData.mobile_number}
+            required="required"
           />
+          <span>Mobile number</span>
         </div>
-        <button type="submit" className="btn btn-info mb-2">
-          <span className="oi oi-zoom-in"></span> {"\n"} Find
-        </button>
+        <div className="buttonContainer">
+          <button type="submit" className="buttonFind">
+            <span className="oi oi-zoom-in"></span> {"\n"} Find
+          </button>
+        </div>
       </form>
-      <div>{displayBusinesscards}</div>
-    </>
+      <div className="showCards">{displayBusinesscards}</div>
+    </div>
   );
 }
 
 export default SearchBusinesscard;
 
-// switch 
+// switch
 
 // case 1 (phone number)
-  //form 
-  //handlesubmitPhoneNumber
+//form
+//handlesubmitPhoneNumber

@@ -17,7 +17,9 @@ function Home() {
               <span className="oi oi-home"></span>
             </div>
             <div className="back">
-              <div className="info"></div>
+              <div className="info">
+                <p>Vancard is the easiest app to manage business cards, the perfect fit for sales people, entrepreneurs, business developers or marketing experts, and anyone who want to be one.</p>
+              </div>
             </div>
           </div>
         

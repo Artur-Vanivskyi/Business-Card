@@ -6,7 +6,7 @@ import CreateBusinesscard from "../components/CreateBusinesscard";
 import EditBusinessCard from "../components/EditBusinessCard";
 import SearchBusinesscard from '../components/SearchBusinesscard';
 import Home from "../components/Home";
-import Card from "../components/Card";
+
 
 function Routes() {
   return (
@@ -29,12 +29,6 @@ function Routes() {
       <Route path="/search">
         <SearchBusinesscard />
       </Route>
-
-      <Route path="/test">
-        <Card />
-      </Route>
-
-
       <Route>
         <NotFound />
       </Route>
