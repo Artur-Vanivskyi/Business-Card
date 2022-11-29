@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s linear;
+}
+
+/* section {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: #1A3C40;
+} */
+section {
+    margin-bottom: 1rem;
+}
+
+.bussiness-card {
+    width: 400px;
+    height: 220px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.bussiness-card .front,
+.bussiness-card .back {
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 26px;
+    overflow: hidden;
+}
+
+.bussiness-card .front {
+    background-color: #22A39F;
+    color: #F3EFE0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.bussiness-card:hover .front {
+    transform: perspective(700px) rotateX(180deg);
+}
+
+.bussiness-card .back {
+    display: none;
+}
+
+/* .bussiness-card .front img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+
+} */
+
+.bussiness-card .front .company {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.bussiness-card .front::before {
+    content: "";
+    border-radius: 10%;
+    border: 8px solid #1A3C40;
+    position: absolute;
+    top: -25%;
+    height: 150%;
+    width: 320px;
+    transform: rotateZ(35deg);
+}
+
+.bussiness-card .back {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: #242424; */
+    background-color: #06283D;
+    transform: perspective(700px) rotateX(-180deg);
+}
+
+.bussiness-card:hover .back {
+    transform: perspective(700px) rotateX(0deg);
+}
+
+.bussiness-card .back .image,
+.bussiness-card .back .info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.bussiness-card .back .image {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    /* background-color: #ffbb90; */
+    background-color: #256D85;
+    color: #242424;
+    align-items: center;
+}
+
+.bussiness-card .back .image img {
+    width: 112px;
+    height: 112px;
+    object-fit: cover;
+    border: 2px solid #242424;
+    border-radius: 50%;
+    padding: 4px;
+    margin-bottom: 16px;
+}
+
+.bussiness-card .back .image h1 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-block: 8px;
+
+}
+
+.bussiness-card .back .image h2 {
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.bussiness-card .back .info {
+    align-items: flex-start;
+    color: #ffbb90;
+}
+
+.bussiness-card .back .info .contact {
+    line-height: 32px;
+    margin-block: 8px;
+
+}
+
+.bussiness-card .back .info .contact span {
+    margin-right: 5px;
+}

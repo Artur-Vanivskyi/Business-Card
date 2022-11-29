@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { listBusinesscards } from "../utils/api";
 import BusinessCards from "./BusinessCards";
+import "./Dashboard.css"
 
 function Dashboard() {
   const [businesscards, setBusinesscards] = useState([]);
@@ -28,9 +29,8 @@ function Dashboard() {
 
   return (
     <>
-      <h1>Dashboard</h1>
       {businesscards.length === 0 && <h4>No businesscards found</h4>}
-      {displayBusinessCards}
+      <div className="display">{displayBusinessCards}</div>
     </>
   );
 }

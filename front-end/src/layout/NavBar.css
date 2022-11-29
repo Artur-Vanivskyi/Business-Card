@@ -1,5 +1,5 @@
 .all {
-    padding: 0.5rem;
+    padding: 0.8rem;
     margin: 0;
     box-sizing: border-box;
     background-color: #1D5C63;
@@ -28,7 +28,7 @@ ul {
 .navBrand {
     text-decoration: none;
     font-family: sans-serif;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
     margin-left: 3rem;
     color: #344D67;

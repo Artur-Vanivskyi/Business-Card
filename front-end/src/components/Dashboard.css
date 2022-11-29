@@ -1,0 +1,6 @@
+.display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #1A3C40;
+    padding: 4rem 0rem 0 3rem;
+}

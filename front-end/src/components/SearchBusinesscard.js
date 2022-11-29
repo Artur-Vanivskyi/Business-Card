@@ -75,3 +75,9 @@ function SearchBusinesscard() {
 }
 
 export default SearchBusinesscard;
+
+// switch 
+
+// case 1 (phone number)
+  //form 
+  //handlesubmitPhoneNumber

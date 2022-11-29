@@ -1,5 +1,7 @@
 import React from "react";
 import { deleteBusinesscard } from "../utils/api";
+import img from "../assests/test.png";
+import "./Card.css";
 
 function BusinessCards({ businesscard, loadBusinesscards }) {
   const {
@@ -22,28 +24,53 @@ function BusinessCards({ businesscard, loadBusinesscards }) {
   };
 
   return (
-    <>
-      <h1>BusinessCard</h1>
-      <div className="card">
-        <h4>First Name: {first_name}</h4>
-        <h4>Last Name: {last_name}</h4>
-        <h4>Mobile Number: {mobile_number}</h4>
-        <h4>Email: {email}</h4>
-        <h4>Job Title: {job_title}</h4>
-        <h4>Company name: {company_name}</h4>
-        <h4>Comments: {comments}</h4>
-        <a
-          href={`/businesscards/${businesscard_id}/edit`}
-          role="button"
-          className="btn btn-secondary"
-        >
-          <span className="oi oi-pencil"></span> Edit
-        </a>
-        <button type="button" className="btn btn-info" onClick={handleDelete}>
-          <span className="oi oi-circle-x mr-1"></span>Delete
-        </button>
-      </div>
-    </>
+    <div className="all-card">
+      <section>
+        <div className="bussiness-card">
+          <div className="front">
+            <div className="company">{company_name}</div>
+          </div>
+          <div className="back">
+            <div className="image">
+              <img src={img} />
+              <h1>
+                {first_name} {last_name}
+              </h1>
+              <h2>{job_title}</h2>
+            </div>
+            <div className="info">
+              <div className="contact">
+                <span className="oi oi-phone"></span>
+                {mobile_number}
+              </div>
+              <div className="contact">
+                <span className="oi oi-envelope-open"></span>
+                {email}
+              </div>
+              {comments && (
+                <div className="contact">
+                  <span className="oi oi-pencil"></span>
+                  {comments}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    // {/* <div className="card">
+    //   <a
+    //     href={`/businesscards/${businesscard_id}/edit`}
+    //     role="button"
+    //     className="btn btn-secondary"
+    //   >
+    //     <span className="oi oi-pencil"></span> Edit
+    //   </a>
+    //   <button type="button" className="btn btn-info" onClick={handleDelete}>
+    //     <span className="oi oi-circle-x mr-1"></span>Delete
+    //   </button>
+    // </div> */}
   );
 }
 
