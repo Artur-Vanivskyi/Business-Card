@@ -6,7 +6,7 @@
     margin: 4rem;
 }
 
-/* @media all and(min-width:600px) {
+@media all and(max-width:600px) {
     .display {
         display: flex;
     flex-wrap: wrap;
@@ -14,4 +14,4 @@
     column-gap: 3rem;
     margin: 6rem;
     }
-} */
+}
