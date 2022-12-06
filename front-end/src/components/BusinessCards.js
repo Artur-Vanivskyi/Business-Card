@@ -25,38 +25,41 @@ function BusinessCards({ businesscard, loadBusinesscards }) {
 
   return (
     <div className="all-card">
-      
-        <div className="bussiness-card">
-          <div className="front">
-            <div className="company">{company_name}</div>
+      <div className="buttonBox">
+      <button type="button" className="button-delete" onClick={handleDelete}>
+        <span className="oi oi-circle-x"></span>
+      </button>
+      </div>
+      <div className="bussiness-card">
+        <div className="front">
+          <div className="company">{company_name}</div>
+        </div>
+        <div className="back">
+          <div className="image">
+            <img src={img} />
+            <h1>
+              {first_name} {last_name}
+            </h1>
+            <h2>{job_title}</h2>
           </div>
-          <div className="back">
-            <div className="image">
-              <img src={img} />
-              <h1>
-                {first_name} {last_name}
-              </h1>
-              <h2>{job_title}</h2>
+          <div className="info">
+            <div className="contact">
+              <span className="oi oi-phone"></span>
+              {mobile_number}
             </div>
-            <div className="info">
-              <div className="contact">
-                <span className="oi oi-phone"></span>
-                {mobile_number}
-              </div>
-              <div className="contact">
-                <span className="oi oi-envelope-open"></span>
-                {email}
-              </div>
-              {comments && (
-                <div className="contact">
-                  <span className="oi oi-pencil"></span>
-                  {comments}
-                </div>
-              )}
+            <div className="contact">
+              <span className="oi oi-envelope-open"></span>
+              {email}
             </div>
+            {comments && (
+              <div className="contact">
+                <span className="oi oi-pencil"></span>
+                {comments}
+              </div>
+            )}
           </div>
         </div>
-      
+      </div>
     </div>
 
     // {/* <div className="card">

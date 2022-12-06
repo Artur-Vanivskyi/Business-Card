@@ -136,3 +136,20 @@ section {
 .bussiness-card .back .info .contact span {
     margin-right: 5px;
 }
+
+.buttonBox {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.button-delete {
+    position: relative;
+    text-align: center;
+    font-size: 25px;
+    background-color: transparent;
+    color:  #00dfc4;
+    cursor: pointer;
+    transition: 1.5s;
+
+}
