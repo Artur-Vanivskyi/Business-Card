@@ -1,27 +1,22 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #1A3C40;
+    /* transition: all 0.5s linear; */
+    /* background: #1A3C40; */
 }
 
-.container {
+/* .container {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 150px;
-}
+} */
 
-.container .ring {
+/* .container .ring {
     position: relative;
     width: 150px;
     height: 150px;
@@ -31,9 +26,9 @@
     border-top: 4px solid #24ecff;
     animation: animate 4s linear infinite;
 
-}
+} */
 
-@keyframes animate {
+/* @keyframes animate {
     0% {
         transform: rotate(0deg);
     }
@@ -41,10 +36,10 @@
     100% {
         transform: rotate(360deg);
     }
-}
+} */
 
 
-.container .ring::before {
+/* .container .ring::before {
     content: "";
     position: absolute;
     top: 12px;
@@ -59,17 +54,17 @@
         0 0 20px #24ecff,
         0 0 50px #24ecff;
 
-}
+} */
 
 
-.container .ring:nth-child(2) {
+/* .container .ring:nth-child(2) {
     animation: animate2 4s linear infinite;
     animation-delay: -1s;
     border-top: 4px solid transparent;
     border-left: 4px solid #93ff2d;
-}
+} */
 
-.container .ring:nth-child(2)::before {
+/* .container .ring:nth-child(2)::before {
     content: "";
     position: absolute;
     top: initial;
@@ -85,9 +80,9 @@
         0 0 20px #93ff2d,
         0 0 50px #93ff2d;
 
-}
+} */
 
-@keyframes animate2 {
+/* @keyframes animate2 {
     0% {
         transform: rotate(360deg);
     }
@@ -105,9 +100,9 @@
     border-top: 4px solid transparent;
     border-left: 4px solid #e41cf8;
 
-}
+} */
 
-.container .ring:nth-child(3)::before {
+/* .container .ring:nth-child(3)::before {
     content: "";
     position: absolute;
     top: initial;
@@ -123,19 +118,113 @@
         0 0 20px #e41cf8,
         0 0 50px #e41cf8;
 
+} */
+
+.wrap {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    align-items: center;
 }
 
-.home .wrap .bussiness-card .front span {
+
+
+.bussiness-card-home {
+    width: 50%;
+    height: 40vh;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.bussiness-card-home .front-home,
+.bussiness-card-home .back-home {
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 26px;
+    overflow: hidden;
+}
+
+.bussiness-card-home .front-home {
+    background-color: var(--color-background);
+    color: #F3EFE0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.bussiness-card-home:hover .front-home {
+    transform: perspective(700px) rotateX(180deg);
+}
+
+.bussiness-card-home .back-home {
+    display: none;
+}
+
+
+.bussiness-card-home .front-home .company-home {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.bussiness-card-home .front-home span {
     font-size: 40px;
 }
 
-.home .wrap .bussiness-card .back .info {
-    width: 200%;
+.bussiness-card-home .front-home::before {
+    content: "";
+    border-radius: 10%;
+    border: 8px solid #1A3C40;
+    position: absolute;
+    top: -25%;
+    height: 150%;
+    width: 320px;
+    transform: rotateZ(35deg);
 }
 
-.home .wrap .bussiness-card .back .info p {
-    font-size: 20px;
+.bussiness-card-home .back-home {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+   
+    transform: perspective(700px) rotateX(-180deg);
+}
+
+.bussiness-card-home:hover .back-home {
+    transform: perspective(700px) rotateX(0deg);
+}
+
+.bussiness-card-home .back-home .info-home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    color: #ffbb90;
+    background-color: #06283D;
+}
+
+.bussiness-card-home .back-home .info-home p {
+    font-size: 22px;
     text-align: center;
     width: 100%;
     height: auto;
+    padding: 20px;
+}
+
+
+@media all and (max-width:600px){
+    .wrap {
+        display: flex;
+        flex-direction: column;
+    }
+    .bussiness-card-home {
+        width: 100%;
+        height: 50vh;
+    }
 }

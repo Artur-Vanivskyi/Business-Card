@@ -5,12 +5,6 @@
     transition: all 0.5s linear;
 }
 
-/* section {
-    display: grid;
-    place-content: center;
-    min-height: 100vh;
-    background-color: #1A3C40;
-} */
 section {
     margin-bottom: 1rem;
 }
@@ -32,7 +26,7 @@ section {
 }
 
 .bussiness-card .front {
-    background-color: #22A39F;
+    background-color: var(--color-background);
     color: #F3EFE0;
     display: flex;
     justify-content: center;
@@ -80,7 +74,6 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    /* background-color: #242424; */
     background-color: #06283D;
     transform: perspective(700px) rotateX(-180deg);
 }
