@@ -8,10 +8,6 @@
 
 @media all and(max-width:600px) {
     .display {
-        display: flex;
-    flex-wrap: wrap;
-    row-gap: 1rem;
-    column-gap: 3rem;
-    margin: 6rem;
+        margin: 6rem;
     }
 }
