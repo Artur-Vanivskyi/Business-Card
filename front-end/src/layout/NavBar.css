@@ -86,7 +86,7 @@ ul {
 
 /* ---------- MEDIA ---------- */
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     nav {
         display: flex;
         flex-direction: column;
@@ -116,4 +116,4 @@ ul {
         font-size: 10px;
     }
 
-}
+} */
