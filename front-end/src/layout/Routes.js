@@ -4,9 +4,8 @@ import NotFound from "./NotFound";
 import Dashboard from "../components/Dashboard";
 import CreateBusinesscard from "../components/CreateBusinesscard";
 import EditBusinessCard from "../components/EditBusinessCard";
-import SearchBusinesscard from '../components/SearchBusinesscard';
+import SearchBusinesscard from "../components/SearchBusinesscard";
 import Home from "../components/Home";
-
 
 function Routes() {
   return (
@@ -15,13 +14,13 @@ function Routes() {
         <Redirect to={"/home"} />
       </Route>
       <Route path="/home">
-        <Home/>
+        <Home />
       </Route>
       <Route path="/businesscards/new">
-        <CreateBusinesscard/>
+        <CreateBusinesscard />
       </Route>
       <Route path="/businesscards/:businesscard_id/edit">
-        <EditBusinessCard/>
+        <EditBusinessCard />
       </Route>
       <Route path="/dashboard">
         <Dashboard />

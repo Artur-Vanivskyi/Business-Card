@@ -10,11 +10,11 @@
 }
 
 .showCards {
-display: flex;
-justify-content: space-around;
-flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 2rem;
 }
-
 
 .inputLine {
     position: relative;
@@ -85,9 +85,7 @@ flex-wrap: wrap;
     cursor: pointer;
     border-radius: 100px;
     transition: 1.5s;
-
 }
-
 
 .buttonFind:hover {
     box-shadow: 0 5px 20px 0 #00dfc4 inset, 0 5px 20px 0 #00dfc4,

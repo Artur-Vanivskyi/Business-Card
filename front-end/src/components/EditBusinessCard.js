@@ -49,8 +49,7 @@ function EditBusinessCard() {
   }, [businesscard_id]);
 
   const handleSubmit = (event) => {
-
-    event.preventDefault()
+    event.preventDefault();
     const abortController = new AbortController();
     editBusinesscard(formData, businesscard_id, abortController.signal)
       .then(() => history.push(`/dashboard`))
@@ -61,11 +60,11 @@ function EditBusinessCard() {
 
   return (
     <div>
-      <BusinessCardForm 
-      handleSubmit={handleSubmit}
-      handleChange={handleChange}
-      handleCancel={handleCancel}
-      formData={formData}
+      <BusinessCardForm
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        handleCancel={handleCancel}
+        formData={formData}
       />
     </div>
   );

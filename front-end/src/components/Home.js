@@ -14,7 +14,7 @@ function Home() {
         <div>
           <CreateBusinesscard />
         </div>
-         <div className="bussiness-card-home">
+        <div className="bussiness-card-home">
           <div className="front-home">
             <div className="company-home">Learn about us!</div>
             <span className="oi oi-home"></span>
@@ -29,8 +29,6 @@ function Home() {
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   );

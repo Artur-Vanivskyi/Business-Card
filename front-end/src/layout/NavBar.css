@@ -22,10 +22,6 @@ ul {
     text-decoration: none;
 }
 
-/* .navtop {
-    display: flex;
-} */
-
 .navBrand {
     text-decoration: none;
     font-family: sans-serif;
@@ -63,25 +59,18 @@ ul {
         0 0 1px #fff;
 }
 
-
 .navlink:hover {
     text-decoration: none;
     /* background: #fff; */
     color: #00fffc;
     font-weight: bold;
-
-     box-shadow: 0 0 5px #00dfc4,
+    box-shadow: 0 0 5px #00dfc4,
         0 0 5px #00dfc4,
         0 0 5px #fff,
         0 0 5px #fff,
         0 0 5px #fff;
 
 }
-
-/* .navtop {
-    display: flex;
-    justify-content: space-between;
-} */
 
 
 /* ---------- MEDIA ---------- */
@@ -92,7 +81,7 @@ ul {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-       
+
     }
 
     .navBrand {
@@ -102,10 +91,10 @@ ul {
     }
 
     ul {
-       display: flex;
-       justify-content: center;
-       margin-top: 1rem;
-       height: 40px;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        height: 40px;
 
     }
 

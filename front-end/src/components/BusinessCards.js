@@ -26,9 +26,9 @@ function BusinessCards({ businesscard, loadBusinesscards }) {
   return (
     <div className="all-card">
       <div className="buttonBox">
-      <button type="button" className="button-delete" onClick={handleDelete}>
-        <span className="oi oi-circle-x"></span>
-      </button>
+        <button type="button" className="button-delete" onClick={handleDelete}>
+          <span className="oi oi-circle-x"></span>
+        </button>
       </div>
       <div className="bussiness-card">
         <div className="front">

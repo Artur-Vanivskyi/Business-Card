@@ -1,11 +1,11 @@
-import React from 'react'
-import NavBar from './NavBar'
-import Routes from './Routes'
-import './Layout.css'
+import React from "react";
+import NavBar from "./NavBar";
+import Routes from "./Routes";
+import "./Layout.css";
 
-function Layout(){
-    return (
-        <div>
+function Layout() {
+  return (
+    <div>
       <div className="">
         <NavBar />
       </div>
@@ -13,7 +13,7 @@ function Layout(){
         <Routes />
       </div>
     </div>
-    )
+  );
 }
 
 export default Layout;

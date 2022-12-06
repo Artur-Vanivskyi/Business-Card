@@ -1,4 +1,3 @@
-
 const API_BASE_URL =
   process.env.REACT_APP_API_BASE_URL || "http://localhost:5002";
 
@@ -82,11 +81,11 @@ export async function editBusinesscard(businesscard, businesscard_id, signal) {
   return await fetchJson(url, options);
 }
 
-export async function deleteBusinesscard(businesscard_id){
-  const url = new URL(`${API_BASE_URL}/businesscards/${businesscard_id}`)
+export async function deleteBusinesscard(businesscard_id) {
+  const url = new URL(`${API_BASE_URL}/businesscards/${businesscard_id}`);
   const options = {
     method: "DELETE",
     headers,
-  }
+  };
   return await fetchJson(url, options);
 }

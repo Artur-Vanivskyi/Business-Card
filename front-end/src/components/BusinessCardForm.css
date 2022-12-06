@@ -1,4 +1,3 @@
-
 .body {
     display: flex;
     justify-content: center;
@@ -92,12 +91,10 @@
     border-radius: 2px;
 }
 
-
 .inputBox input:valid,
 .inputBox input:focus {
     border: 1px solid #00dfc4;
 }
-
 
 .button {
     position: relative;
@@ -106,9 +103,9 @@
     margin-right: 0.5em;
     font-size: 15px;
     background-color: #1d2b3a;
-    color:  #00dfc4;
+    color: #00dfc4;
     font-weight: 300;
-    border: 2px solid  #00dfc4;
+    border: 2px solid #00dfc4;
     text-transform: uppercase;
     letter-spacing: 5px;
     cursor: pointer;
@@ -117,8 +114,7 @@
 
 }
 
-
 .button:hover {
-    box-shadow: 0 5px 20px 0 #00dfc4 inset, 0 5px 20px 0  #00dfc4,
-                0 5px 20px 0  #00dfc4 inset, 0 5px 20px 0  #00dfc4;
+    box-shadow: 0 5px 20px 0 #00dfc4 inset, 0 5px 20px 0 #00dfc4,
+        0 5px 20px 0 #00dfc4 inset, 0 5px 20px 0 #00dfc4;
 }

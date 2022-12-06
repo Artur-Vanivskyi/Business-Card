@@ -1,8 +1,7 @@
-import "./Dashboard.css"
+import "./Dashboard.css";
 import React, { useState, useEffect } from "react";
 import { listBusinesscards } from "../utils/api";
 import BusinessCards from "./BusinessCards";
-
 
 function Dashboard() {
   const [businesscards, setBusinesscards] = useState([]);
@@ -28,11 +27,7 @@ function Dashboard() {
     />
   ));
 
-  return (
-    
-      <div className="display">{displayBusinessCards}</div>
-    
-  );
+  return <div className="display">{displayBusinessCards}</div>;
 }
 
 export default Dashboard;

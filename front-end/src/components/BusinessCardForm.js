@@ -8,7 +8,6 @@ function BusinessCardForm({
   formData,
 }) {
   return (
-    
     <form className="body" onSubmit={handleSubmit}>
       <div className="inputBox">
         <input

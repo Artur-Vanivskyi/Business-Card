@@ -13,12 +13,7 @@
     --color-primary: #3df7fa;
 }
 
-/* html {
-    scroll-behavior: smooth;
-} */
-
 body {
-   background-color: var(--color-background);
-   background-image: url(../src/assests/bg-texture.png)
+    background-color: var(--color-background);
+    background-image: url(../src/assests/bg-texture.png)
 }
-

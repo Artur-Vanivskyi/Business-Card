@@ -18,7 +18,6 @@ function CreateBusinesscard() {
   const [formData, setFormData] = useState(initialFormState);
   const [formErrors, setFormErrors] = useState(null);
 
-  
   const handleChange = ({ target }) => {
     setFormData({
       ...formData,
@@ -29,13 +28,12 @@ function CreateBusinesscard() {
   const handleCancel = () => {
     history.goBack();
   };
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const abortController = new AbortController();
     createBusinesscard(formData, abortController.signal)
       .then(() => history.push("/dashboard"))
-
       .catch(setFormErrors);
 
     return () => abortController.abort();
@@ -45,9 +43,7 @@ function CreateBusinesscard() {
 
   return (
     <>
-      
-      
-     {displayFormErrros}
+      {displayFormErrros}
       <BusinessCardForm
         handleSubmit={handleSubmit}
         handleChange={handleChange}

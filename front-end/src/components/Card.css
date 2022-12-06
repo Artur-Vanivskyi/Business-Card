@@ -43,13 +43,6 @@ section {
     display: none;
 }
 
-/* .bussiness-card .front img {
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
-
-} */
-
 .bussiness-card .front .company {
     font-size: 42px;
     font-weight: 600;
@@ -113,13 +106,11 @@ section {
     font-size: 21px;
     font-weight: 600;
     margin-block: 8px;
-
 }
 
 .bussiness-card .back .image h2 {
     font-size: 16px;
     font-weight: 500;
-
 }
 
 .bussiness-card .back .info {
@@ -142,14 +133,12 @@ section {
     justify-content: flex-end;
 }
 
-
 .button-delete {
     position: relative;
     text-align: center;
     font-size: 25px;
     background-color: transparent;
-    color:  #00dfc4;
+    color: #00dfc4;
     cursor: pointer;
     transition: 1.5s;
-
 }
